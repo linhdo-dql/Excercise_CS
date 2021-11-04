@@ -20,7 +20,7 @@ namespace Exercise_Lab04.Lab4_4
 
         protected override float CalculateBonus()
         {
-            return (float)(salary * 0.05 + 1000);
+            return (float)(salary * 0.06 + 1000);
         }
 
         protected override int CalculateVacation()

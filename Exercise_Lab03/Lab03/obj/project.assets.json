@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab03\\Lab03\\Exercise_Lab03.csproj",
+      "projectUniqueName": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab03\\Lab03\\Exercise_Lab03.csproj",
       "projectName": "Exercise_Lab03",
-      "projectPath": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab03\\Lab03\\Exercise_Lab03.csproj",
+      "projectPath": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab03\\Lab03\\Exercise_Lab03.csproj",
       "packagesPath": "C:\\Users\\linhlee88999\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab03\\Lab03\\obj\\",
+      "outputPath": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab03\\Lab03\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

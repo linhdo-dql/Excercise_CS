@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab03
-{
+{   
+    /// <summary>
+    /// Bài 3.1 trong Lab03
+    /// Yêu cầu: Cài đặt và sử dụng đối tượng Employee
+    /// </summary>
     class Lab3_1
     {
         public void ShowEmployee()

@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab03
-{
+{   
+    /// <summary>
+    /// Bài 3.2 trong Lab03
+    /// Yêu cầu: Cài đặt và sử dụng đối tượng Book
+    /// </summary>
     class Lab3_2
     {
         public void ReadBook()

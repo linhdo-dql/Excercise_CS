@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab04.Lab4_2
-{
+{   
+    /// <summary>
+    /// Lớp đối tượng CongNhan kế thừa từ Lớp NhanVien
+    /// </summary>
     class CongNhan: NhanVien
     {
         private int soLuongSanPham { get; set; }

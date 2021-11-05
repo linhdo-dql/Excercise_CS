@@ -14,7 +14,7 @@ namespace Exercise_Lab04.Lab4_4
             this.title = title;
         }
         public override string ToString()
-        {
+        { 
             return base.ToString("Staff");
         }
 

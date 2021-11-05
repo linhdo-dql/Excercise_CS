@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab04.Lab4_3
-{
+{   
+    /// <summary>
+    /// Lớp đối tượng Document thực thi 2 Interface đã tạo IStorage và IEncryptable
+    /// </summary>
     class Document : IStorage, IEncryptable
     {
         public object data => throw new NotImplementedException();

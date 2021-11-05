@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab04
-{
+{ 
+    /// <summary>
+    /// Lớp đối tượng NhanVien
+    /// </summary>
     abstract class NhanVien
     {
         protected string ten;

@@ -5,8 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab04.Lab4_4
-{
-    class Person
+{   
+    /// <summary>
+    /// Lớp đối tượng Person
+    /// </summary>
+    class Person 
     {
         public string name { get; set; }
         public string phoneNumber { get; set; }

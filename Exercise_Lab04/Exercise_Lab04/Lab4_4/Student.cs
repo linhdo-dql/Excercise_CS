@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab04.Lab4_4
-{
+{   
+    /// <summary>
+    /// Lớp đối tượng Student kế thừa lớp Person
+    /// </summary>
     class Student : Person
     {
         private string program;
@@ -14,7 +17,9 @@ namespace Exercise_Lab04.Lab4_4
         {
             this.program = program;
         }
-
+        /// <summary>
+        /// Phương thức toString() ghi đè từ phương thức toString() của lớp Person
+        /// </summary>
         public override string ToString()
         {
             return base.ToString("Student");

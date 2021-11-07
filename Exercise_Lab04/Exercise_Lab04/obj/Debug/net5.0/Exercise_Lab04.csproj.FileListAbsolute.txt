@@ -1,0 +1,16 @@
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.exe
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.deps.json
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.runtimeconfig.json
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.runtimeconfig.dev.json
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.dll
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\ref\Exercise_Lab04.dll
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\bin\Debug\net5.0\Exercise_Lab04.pdb
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.csproj.AssemblyReference.cache
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.AssemblyInfoInputs.cache
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.AssemblyInfo.cs
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.csproj.CoreCompileInputs.cache
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.dll
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\ref\Exercise_Lab04.dll
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.pdb
+C:\Users\linhlee88999\source\repos\Exercise_Lab04\Exercise_Lab04\obj\Debug\net5.0\Exercise_Lab04.genruntimeconfig.cache

@@ -24,6 +24,7 @@ namespace Exercise_Lab05
         {
             Console.WriteLine("Nhập mảng: ");
             int[] arr = InputArray();
+            int[] arr2 = (int[])arr.Clone();
             Console.WriteLine("--------3.1----------");
             Console.WriteLine("Mảng: ");
             ShowArray(arr);
@@ -42,7 +43,6 @@ namespace Exercise_Lab05
             Console.Write("d. Các số nguyên tố trong mảng: ");
             GetPrime(arr);
             Console.WriteLine();
-            int[] arr2 = { 2, 45, -56, 32, 42, 342, -6, 7, 8, -2 };
             Console.WriteLine("e. Số lượng các số dương liên tiếp nhiều nhất là: " + CheckAmountPositive(arr2));
             Console.WriteLine("f. Trung bình cộng các phần tử dương: "+AvgPositiveItem(arr2));
             Console.WriteLine("g. Mảng âm dương đan xen? " +(CheckPositiveNegativeIntertwined(arr2) ? "Có" : "Không"));

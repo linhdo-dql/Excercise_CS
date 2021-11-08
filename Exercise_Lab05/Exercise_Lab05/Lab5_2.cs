@@ -20,7 +20,7 @@ namespace Exercise_Lab05
     {
         public void ShowResult()
         {
-            int[,] arr = new int[4, 4] { { 12, 52, 46, 53 }, { 72, 41, 55, 10 }, { 91, 18, 35, 12 }, { 25, 29, 31, 54 } };
+            int[,] arr = InputArray();
             Console.WriteLine("--------------3.2-------------");
             Console.WriteLine("a. Mảng: ");
             ShowArray(arr);
@@ -54,13 +54,43 @@ namespace Exercise_Lab05
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.Write("{0} ", arr[i, j]);
+                    Console.Write("{0, -4} ", arr[i, j]);
                 }
                 Console.WriteLine();
             }
         }
         /// <summary>
-        /// Tính tổng các phần tử có index rơ = index column
+        /// Nhập mảng
+        /// </summary>
+        public int[,] InputArray()
+        {
+            int[,] arr = new int[4,4];
+            for (int i = 0; i < 4; i++)
+            {  
+                for(int j =0; j<4; j++)
+                {
+                    bool check = false;
+                    Console.Write("a[{0},{1}] = ", i, j);
+                    while (!check)
+                    {
+                        try
+                        {
+                            arr[i,j] = Convert.ToInt32(Console.ReadLine());
+                            check = true;
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Nhập sai vui lòng nhập lại: ");
+                            check = false;
+                        }
+                    }
+                }    
+
+            }
+            return arr;
+        }
+        /// <summary>
+        /// Tính tổng các phần tử có index row = index column
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>

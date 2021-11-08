@@ -27,8 +27,6 @@ namespace Exercise_Lab05.Lab5_4
         }
 
         public void Display()
-        {
-            Console.WriteLine($"{id}, {name}, {age}");
-        }
+        => Console.WriteLine($"{id}, {name}, {age}");
     }
 }

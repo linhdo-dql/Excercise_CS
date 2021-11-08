@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj": {}
+    "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj": {}
   },
   "projects": {
-    "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj": {
+    "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj",
+        "projectUniqueName": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj",
         "projectName": "Exercise_Lab05",
-        "projectPath": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj",
+        "projectPath": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab05\\Exercise_Lab05\\Exercise_Lab05.csproj",
         "packagesPath": "C:\\Users\\linhlee88999\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\linhlee88999\\source\\repos\\Exercise_Lab05\\Exercise_Lab05\\obj\\",
+        "outputPath": "C:\\Users\\linhlee88999\\source\\repos\\Excercise_CS\\Exercise_Lab05\\Exercise_Lab05\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

@@ -22,7 +22,8 @@ namespace Exercise_Lab05
     {
         public void ShowResult()
         {
-            int[] arr = { 2, 45, -56, 32, 42, 342, -6, 7, 8, -2 };
+            Console.WriteLine("Nhập mảng: ");
+            int[] arr = InputArray();
             Console.WriteLine("--------3.1----------");
             Console.WriteLine("Mảng: ");
             ShowArray(arr);
@@ -47,6 +48,33 @@ namespace Exercise_Lab05
             Console.WriteLine("g. Mảng âm dương đan xen? " +(CheckPositiveNegativeIntertwined(arr2) ? "Có" : "Không"));
         }
         /// <summary>
+        /// Nhập mảng
+        /// </summary>
+        public int[] InputArray()
+        {
+            int[] arr = new int[10];
+            for(int i = 0; i<10; i++)
+            {
+                bool check = false;
+                Console.Write("a[{0}] = ", i);
+                while (!check)
+                {
+                    try
+                    {
+                        arr[i] = Convert.ToInt32(Console.ReadLine());
+                        check = true;
+                    }
+                    catch (FormatException)
+                    {   
+                        Console.WriteLine("Nhập sai vui lòng nhập lại: ");
+                        check = false;
+                    }
+                }
+                
+            }
+            return arr;
+        }
+        /// <summary>
         /// Phương thức hiện mảng
         /// </summary>
         public void ShowArray(int[] arr)
@@ -63,15 +91,16 @@ namespace Exercise_Lab05
         /// <returns></returns>
         public int Min(int[] arr)
         {
-            int min = arr[0];
-            for(int i =0; i< arr.Length; i++)
+            return arr.Min();
+            /*int min = arr[0];
+            for(int i = 1; i< arr.Length-1; i++)
             {
                 if(min>arr[i])
                 {
                     min = arr[i];
                 }
             }
-            return min;
+            return min;*/
         }
         /// <summary>
         /// Phương thức đảo mảng
@@ -80,12 +109,13 @@ namespace Exercise_Lab05
         /// <returns></returns>
         public int[] ExchangeArray(int[] arr)
         {
-            for(int i = 0; i< arr.Length/2; i++)
+            Array.Reverse(arr);
+           /* for(int i = 0; i< arr.Length/2; i++)
             {
                 int tmp = arr[i];
                 arr[i] = arr[arr.Length - 1 - i];
                 arr[arr.Length - 1 - i] = tmp;
-            }
+            }*/
             return arr;
         }
         /// <summary>
@@ -96,7 +126,12 @@ namespace Exercise_Lab05
         /// <returns></returns>
         public int[] SortIncreaseOrDecrease(int[] arr, bool type)
         {   
-            for(int i =0; i<arr.Length-1; i++)
+            Array.Sort(arr);
+            if(!type)
+            {
+                Array.Reverse(arr);
+            }
+            /*for(int i =0; i<arr.Length-1; i++)
             {
                 for(int j = i+1; j<arr.Length; j++)
                 {
@@ -119,7 +154,7 @@ namespace Exercise_Lab05
                         }
                     }    
                 }
-            }    
+            } */   
             return arr;
         }
         /// <summary>

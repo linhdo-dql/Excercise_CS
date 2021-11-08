@@ -10,13 +10,11 @@ namespace Exercise_Lab05
         {
             Console.OutputEncoding = Encoding.UTF8;
             /*Lab5_1 lab5_1 = new Lab5_1();
-            lab5_1.ShowResult();
+             lab5_1.ShowResult();*/
             Lab5_2 lab5_2 = new Lab5_2();
             lab5_2.ShowResult();
-            Lab5_3 lab5_3 = new Lab5_3();
-            lab5_3.GetNameOfLunarYear();*/
-            Lab5_4.Lab5_4 lab5_4 = new Lab5_4.Lab5_4();
-            lab5_4.UsingDepartment();
+
+           
         }
     }
 }

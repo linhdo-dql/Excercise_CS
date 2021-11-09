@@ -11,7 +11,7 @@ using Dongvat.AnTap;
 /// </summary>
 namespace Dongvat
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Test ứng dụng trên với mỗi loài 1 con.

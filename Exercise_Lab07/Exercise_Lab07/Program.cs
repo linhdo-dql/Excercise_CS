@@ -12,7 +12,8 @@ namespace Exercise_Lab07
             Lab7_2.Lab7_2 lab7_2 = new Lab7_2.Lab7_2();
             lab7_2.ShowResult();
             Lab7_3.Lab7_3 lab7_3 = new Lab7_3.Lab7_3();
-            lab7_3.ShowResult();*/        
+            lab7_3.ShowResult();
+            */
             Lab7_4.Lab7_4 lab7_4 = new Lab7_4.Lab7_4();
             lab7_4.ShowResult();
         }

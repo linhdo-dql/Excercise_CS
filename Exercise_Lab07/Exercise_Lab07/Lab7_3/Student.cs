@@ -31,20 +31,33 @@ namespace Exercise_Lab07.Lab7_3
         /// </summary>
         public void InputStudent()
         {
-            Console.WriteLine("Nhập id: ");
-            id = Convert.ToInt32(Console.ReadLine());
+            id = InputIntException("Nhập id: ");
             Console.WriteLine("Nhập tên: ");
             name = Console.ReadLine();
-            Console.WriteLine("Nhập điểm lý thuyết: ");
-            theoryMark = Convert.ToInt32(Console.ReadLine());
+            while (name.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                name = Console.ReadLine();
+            }
+            theoryMark = InputIntException("Nhập điểm lý thuyết: ");
             if (theoryMark < 0 || theoryMark > 10) throw new InvalidMarkException();
-            Console.WriteLine("Nhập điểm giữa kì: ");
-            labMark = Convert.ToInt32(Console.ReadLine());
+            labMark = InputIntException("Nhập điểm giữa kỳ: ");
             if (labMark < 0 || labMark > 10) throw new InvalidMarkException();
         }
         public override string ToString()
         {
             return $"Student[{id}, {name}, {theoryMark}, {labMark}]";
+        }
+        public int InputIntException(string message)
+        {
+            Console.Write(message);
+            dynamic tmp = Console.ReadLine();
+            while (int.TryParse(tmp, out int value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                tmp = Console.ReadLine();
+            }
+            return int.Parse(tmp);
         }
     }
 }

@@ -26,16 +26,30 @@ namespace Exercise_Lab07.Lab7_4
             
             Console.WriteLine("Nhập tên: ");
             name = Console.ReadLine();
-            Console.WriteLine("Nhập lương: ");
-            salary = Convert.ToInt32(Console.ReadLine());
+            while (name.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                name = Console.ReadLine();
+            }
+            salary = InputIntException("Nhập lương: ");
             if (salary < 60000 ) throw new AmountException();
-            Console.WriteLine("Nhập thưởng: ");
-            bonus = Convert.ToInt32(Console.ReadLine());
+            bonus = InputIntException("Nhập thưởng: ");
             if (bonus > 10000 ) throw new AmountException();
         }
         public override string ToString()
         {
             return $"Lecture[{name}, {salary}, {bonus}]";
+        }
+        public int InputIntException(string message)
+        {
+            Console.Write(message);
+            dynamic tmp = Console.ReadLine();
+            while (int.TryParse(tmp, out int value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                tmp = Console.ReadLine();
+            }
+            return int.Parse(tmp);
         }
     }
 }

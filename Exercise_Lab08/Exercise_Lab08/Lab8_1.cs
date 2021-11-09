@@ -59,7 +59,7 @@ namespace Exercise_Lab08
                     Menu();
                     break;
                 case 2:
-                    if (books.Length != 0)
+                    if (books != null)
                     {
                         ///Hiển thị tất cả các quyển sách
                         Console.WriteLine("Mảng vừa tạo: ");
@@ -74,7 +74,7 @@ namespace Exercise_Lab08
                     Menu();
                     break;
                 case 3:
-                    if (books.Length != 0)
+                    if (books != null)
                     {
                         ///Hiển thị những quyển sách có giá từ 1000-5000
                         var priceFrom1000To5000 = books.Where((b) => { return b.price >= 1000 && b.price <= 5000; });
@@ -96,7 +96,7 @@ namespace Exercise_Lab08
                     Menu();
                     break;
                 case 4:
-                    if (books.Length != 0)
+                    if (books!= null)
                     {
                         /// Hiển thị những quyển sách xuất bản năm 2015
                         var year2015 = books.Where((b) => { return b.year == 2015; });
@@ -117,7 +117,7 @@ namespace Exercise_Lab08
                     Menu();
                     break;
                 case 5:
-                    if (books.Length != 0)
+                    if (books != null)
                     {
                         /// Hiển thị những quyển sách có tên Lập trình
                         Console.WriteLine("Sách có tên Lập trình là: ");
@@ -139,7 +139,7 @@ namespace Exercise_Lab08
                     Menu();
                     break;
                 case 6:
-                    if (books.Length != 0)
+                    if (books != null)
                     {
                         /// Đếm các quyển sách của nhà xuất bản Giáo Dục.
                         Console.WriteLine("Số lượng sách của nhà xuất bản giáo dục là: " + books.Count((b) => b.publisher.Equals("Giáo Dục")));

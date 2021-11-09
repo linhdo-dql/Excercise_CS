@@ -19,20 +19,14 @@ namespace Exercise_Lab05
         {   
             string[] cans = { "", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh" };
             string[] chis = { "Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi" };
-            int year;
-            do
+            Console.Write("Nhập năm: ");
+            dynamic year = Console.ReadLine();
+            while(!int.TryParse(year, out int value))
             {
-                year = -1;
-                try
-                {
-                    Console.WriteLine("Nhập vào năm: ");
-                    year = Convert.ToInt32(Console.ReadLine());
-                }
-                catch
-                {
-                    Console.WriteLine("Năm không hợp lệ!");
-                }
-            } while (year < 0 || year > 2021);
+                Console.Write("Sai. Nhập lại: ");
+                year = Console.ReadLine();
+            }
+            year = int.Parse(year);
             int can = (year % 1000) % 10;
             if (can == 0) { can = 10; }
             int chi = year % 12;

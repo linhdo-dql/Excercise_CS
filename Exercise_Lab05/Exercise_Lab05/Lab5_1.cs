@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exercise_Lab05
-{   
+{
     /// <summary>
     /// Bài 5.1 trong Lab05
     /// Yêu cầu:
@@ -20,40 +21,110 @@ namespace Exercise_Lab05
     /// </summary>
     class Lab5_1
     {
+        int[] arr, arr2;
+        int value;
         public void ShowResult()
         {
-            Console.WriteLine("Nhập mảng: ");
-            int[] arr = InputArray();
-            Console.WriteLine("--------3.1----------");
-            Console.WriteLine("Mảng: ");
-            ShowArray(arr);
-            Console.WriteLine();
-            Console.WriteLine("a. Giá trị nhỏ nhất của mảng là: " +Min(arr));
-            Console.Write("b. Mảng sau khi đảo các giá trị: ");
-            ShowArray(ExchangeArray(arr));
-            Console.WriteLine();
-            Console.WriteLine("c. Mảng sau khi sắp xếp: ");
-            Console.Write("Tăng: ");
-            ShowArray(SortIncreaseOrDecrease(arr, true));
-            Console.WriteLine();
-            Console.Write("Giảm: ");
-            ShowArray(SortIncreaseOrDecrease(arr, false));
-            Console.WriteLine();
-            Console.Write("d. Các số nguyên tố trong mảng: ");
-            GetPrime(arr);
-            Console.WriteLine();
-            int[] arr2 = { 2, 45, -56, 32, 42, 342, -6, 7, 8, -2 };
-            Console.WriteLine("e. Số lượng các số dương liên tiếp nhiều nhất là: " + CheckAmountPositive(arr2));
-            Console.WriteLine("f. Trung bình cộng các phần tử dương: "+AvgPositiveItem(arr2));
-            Console.WriteLine("g. Mảng âm dương đan xen? " +(CheckPositiveNegativeIntertwined(arr2) ? "Có" : "Không"));
+            Menu();
+        }
+        public void Menu()
+        {
+            Console.WriteLine("-----------------------------Bài 5.1-------------------------------");
+            Console.WriteLine("1. Nhập mảng. ");
+            Console.WriteLine("2. Hiện mảng. ");
+            Console.WriteLine("3. Tìm giá trị nhỏ nhất trong mảng. ");
+            Console.WriteLine("4. Đảo ngược mảng. ");
+            Console.WriteLine("5. Sắp xếp mảng tăng hoặc giảm.");
+            Console.WriteLine("6. Tìm phần tử là số nguyên tố.");
+            Console.WriteLine("7. In ra số lượng cá số dương liên tiếp nhiều nhất.");
+            Console.WriteLine("8. Tính trung bình cộng các phần tử dương.");
+            Console.WriteLine("9. Mảng có âm dương đan xen?");
+            Console.WriteLine("0. Thoát.");
+            Console.WriteLine("Mời chọn: ");
+            dynamic choose = Console.ReadLine();
+            while (!int.TryParse(choose, out value))
+            {
+                choose = Console.ReadLine();
+            }
+            switch (int.Parse(choose))
+            {
+                case 0: break;
+                case 1:
+                    arr = InputArray();
+                    arr2 = (int[])arr.Clone();
+                    Menu();
+                    break;
+                case 2:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("Mảng: ");
+                        ShowArray(arr);
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 3:
+                    Console.WriteLine("Giá trị nhỏ nhất trong mảng là: " + Min(arr));
+                    Menu();
+                    break;
+                case 4:
+                    Console.Write("Mảng sau khi đảo ngược: ");
+                    ShowArray(ExchangeArray(arr));
+                    Console.WriteLine();
+                    Menu();
+                    break;
+                case 5:
+                    Console.WriteLine("Mảng sau khi sắp xếp: ");
+                    Console.Write("Tăng dần: ");
+                    ShowArray(SortIncreaseOrDecrease(arr, true));
+                    Console.WriteLine();
+                    Console.Write("Giảm dần: ");
+                    ShowArray(SortIncreaseOrDecrease(arr, false));
+                    Console.WriteLine();
+                    Menu();
+                    break;
+                case 6:
+                    Console.Write("Các số nguyên tố trong mảng: ");
+                    GetPrime(arr);
+                    Console.WriteLine();
+                    Menu();
+                    break;
+                case 7:
+                    Console.WriteLine("Số lượng số dương liên tiếp nhiều nhất là: " + CheckAmountPositive(arr2));
+                    Console.WriteLine();
+                    Menu();
+                    break;
+                case 8:
+                    Console.WriteLine("Trung bình cộng các số dương trong mảng: " + AvgPositiveItem(arr));
+                    Console.WriteLine();
+                    Menu();
+                    break;
+                case 9:
+                    Console.WriteLine("Mảng âm dương đan xen? " + CheckPositiveNegativeIntertwined(arr2));
+                    Menu();
+                    break;
+                default: Menu(); break;
+            }
         }
         /// <summary>
         /// Nhập mảng
         /// </summary>
         public int[] InputArray()
         {
-            int[] arr = new int[10];
-            for(int i = 0; i<10; i++)
+            Console.WriteLine("Nhập số lượng phần tử: ");
+            dynamic n = Console.ReadLine();
+            while (!int.TryParse(n, out value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                n = Console.ReadLine();
+            }
+            n = int.Parse(n);
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
             {
                 bool check = false;
                 Console.Write("a[{0}] = ", i);
@@ -65,12 +136,12 @@ namespace Exercise_Lab05
                         check = true;
                     }
                     catch (FormatException)
-                    {   
+                    {
                         Console.WriteLine("Nhập sai vui lòng nhập lại: ");
                         check = false;
                     }
                 }
-                
+
             }
             return arr;
         }
@@ -79,7 +150,7 @@ namespace Exercise_Lab05
         /// </summary>
         public void ShowArray(int[] arr)
         {
-            foreach(int x in arr)
+            foreach (int x in arr)
             {
                 Console.Write(x + " ");
             }
@@ -110,12 +181,12 @@ namespace Exercise_Lab05
         public int[] ExchangeArray(int[] arr)
         {
             Array.Reverse(arr);
-           /* for(int i = 0; i< arr.Length/2; i++)
-            {
-                int tmp = arr[i];
-                arr[i] = arr[arr.Length - 1 - i];
-                arr[arr.Length - 1 - i] = tmp;
-            }*/
+            /* for(int i = 0; i< arr.Length/2; i++)
+             {
+                 int tmp = arr[i];
+                 arr[i] = arr[arr.Length - 1 - i];
+                 arr[arr.Length - 1 - i] = tmp;
+             }*/
             return arr;
         }
         /// <summary>
@@ -125,9 +196,9 @@ namespace Exercise_Lab05
         /// <param name="type"></param>
         /// <returns></returns>
         public int[] SortIncreaseOrDecrease(int[] arr, bool type)
-        {   
+        {
             Array.Sort(arr);
-            if(!type)
+            if (!type)
             {
                 Array.Reverse(arr);
             }
@@ -154,7 +225,7 @@ namespace Exercise_Lab05
                         }
                     }    
                 }
-            } */   
+            } */
             return arr;
         }
         /// <summary>
@@ -164,7 +235,7 @@ namespace Exercise_Lab05
         public void GetPrime(int[] arr)
         {
             List<int> primes = new List<int>();
-            for(int i =0; i< arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] >= 2 && CheckPrime(arr[i]))
                 {
@@ -179,9 +250,9 @@ namespace Exercise_Lab05
         /// <returns></returns>
         public bool CheckPrime(int number)
         {
-            for(int i = 2; i< Math.Sqrt(number); i++)
+            for (int i = 2; i < Math.Sqrt(number); i++)
             {
-                if(number%i==0)
+                if (number % i == 0)
                 {
                     return false;
                 }
@@ -197,11 +268,11 @@ namespace Exercise_Lab05
         {
             int amount = 0;
             List<int> amounts = new List<int>();
-            for(int i=0; i<arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if(arr[i]>0) 
-                { 
-                    amount = amount +1;
+                if (arr[i] > 0)
+                {
+                    amount = amount + 1;
                 }
                 else
                 {
@@ -209,8 +280,12 @@ namespace Exercise_Lab05
                     amount = 0;
                 }
             }
-            amounts.Sort();
-            return amounts[amounts.Count-1];
+            if (amounts.Count != 0)
+            {
+                amounts.Sort();
+                return amounts[amounts.Count - 1];
+            }
+            return arr.Length;
         }
         /// <summary>
         /// Phương thức tính trung bình cộng các số dương
@@ -221,9 +296,9 @@ namespace Exercise_Lab05
         {
             int sum = 0;
             int positive = 0;
-            for(int i=0; i<arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if(arr[i]>0)
+                if (arr[i] > 0)
                 {
                     sum += arr[i];
                     positive++;
@@ -236,10 +311,10 @@ namespace Exercise_Lab05
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        public bool CheckPositiveNegativeIntertwined(int[] arr)
+        public string CheckPositiveNegativeIntertwined(int[] arr)
         {
             int intertwined = 1;
-            for (int i=0; i<arr.Length-1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 if ((arr[i] > 0 && arr[i + 1] > 0) || (arr[i + 1] < 0 && arr[i] < 0))
                 {
@@ -247,7 +322,7 @@ namespace Exercise_Lab05
                     break;
                 }
             }
-            return intertwined == 1 ? true : false;
+            return intertwined == 1 ? "CÓ" : "KHÔNG";
         }
     }
 }

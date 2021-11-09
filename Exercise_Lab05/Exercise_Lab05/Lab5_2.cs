@@ -18,21 +18,128 @@ namespace Exercise_Lab05
     /// </summary>
     class Lab5_2
     {
+        int value;
+        int[,] arr;
         public void ShowResult()
         {
-            int[,] arr = InputArray();
-            Console.WriteLine("--------------3.2-------------");
-            Console.WriteLine("a. Mảng: ");
-            ShowArray(arr);
-            Console.WriteLine("b. Tổng các phần tử có chỉ số hàng bằng chỉ số cột: " + SumColumIndexEqualsRowIndex(arr));
-            Console.WriteLine("c. Phần tử nhỏ nhất trên cột: ");
-            FindMinInColumns(arr);
-            Console.Write("d. Các phần tử chia hết cho 7 là: ");
-            GetItemDivisibleOf7(arr);
-            Console.WriteLine();
-            Console.WriteLine("e. Tổng các phần tử ở đường viền mảng: " + SumOfItemInBorderArray(arr));
-            Console.WriteLine("f. Mảng 2 chiều thành mảng 1 chiều rồi sắp xếp: ");
-            ShowArray1D(Convert2DArrayTo1DArray(arr));
+            /* Console.WriteLine("--------------3.2-------------");
+             Console.WriteLine("a. Mảng: ");
+             ShowArray(arr);
+             Console.WriteLine("b. Tổng các phần tử có chỉ số hàng bằng chỉ số cột: " + SumColumIndexEqualsRowIndex(arr));
+             Console.WriteLine("c. Phần tử nhỏ nhất trên cột: ");
+             FindMinInColumns(arr);
+             Console.Write("d. Các phần tử chia hết cho 7 là: ");
+             GetItemDivisibleOf7(arr);
+             Console.WriteLine();
+             Console.WriteLine("e. Tổng các phần tử ở đường viền mảng: " + SumOfItemInBorderArray(arr));
+             Console.WriteLine("f. Mảng 2 chiều thành mảng 1 chiều rồi sắp xếp: ");
+             ShowArray1D(Convert2DArrayTo1DArray(arr));*/
+            Menu();
+        }
+        public void Menu()
+        {
+            Console.WriteLine("-----------------------------Bài 5.2-------------------------------");
+            Console.WriteLine("1. Nhập mảng. ");
+            Console.WriteLine("2. Hiện mảng. ");
+            Console.WriteLine("3. Tìm tổng các phần tử có chỉ số hàng bằng chỉ số cột. ");
+            Console.WriteLine("4. Phần tử nhỏ nhất trên cột. ");
+            Console.WriteLine("5. Các phần tử chia hết cho 7.");
+            Console.WriteLine("6. Tổng các phần tử ở đường viền mảng.");
+            Console.WriteLine("7. Mảng 2 chiều thành mảng 1 chiều rồi sắp xếp.");
+            Console.WriteLine("0. Thoát.");
+            Console.WriteLine("Mời chọn: ");
+            dynamic choose = Console.ReadLine();
+            while(!int.TryParse(choose, out value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                choose = Console.ReadLine();
+            }
+            switch (int.Parse(choose))
+            {
+                case 0: break;
+                case 1:
+                    arr = InputArray();
+                    Menu();
+                    break;
+                case 2:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("Mảng: ");
+                        ShowArray(arr);
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 3:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("Tổng các phần tử có chỉ số hàng bằng chỉ số cột: " + SumColumIndexEqualsRowIndex(arr));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 4:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("Phần tử nhỏ nhất trên cột: ");
+                        FindMinInColumns(arr);
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 5:
+                    if (arr != null)
+                    {
+                        Console.Write("Các phần tử chia hết cho 7 là: ");
+                        GetItemDivisibleOf7(arr);
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 6:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("e. Tổng các phần tử ở đường viền mảng: " + SumOfItemInBorderArray(arr));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                case 7:
+                    if (arr != null)
+                    {
+                        Console.WriteLine("f. Mảng 2 chiều thành mảng 1 chiều rồi sắp xếp: ");
+                        ShowArray1D(Convert2DArrayTo1DArray(arr));
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa nhập mảng.");
+                    }
+                    Menu();
+                    break;
+                   
+                default: Menu(); break;
+            }
         }
         /// <summary>
         /// Hiển thị mảng 1 chiều
@@ -44,7 +151,8 @@ namespace Exercise_Lab05
             {
                 Console.Write(x + " ");
             }
-        }/// <summary>
+        }
+        /// <summary>
         /// Hiển thị mảng 2 chiều
         /// </summary>
         /// <param name="arr"></param>

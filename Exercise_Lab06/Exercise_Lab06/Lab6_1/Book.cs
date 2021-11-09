@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise_Lab06.Lab6_1
 {
@@ -34,6 +30,39 @@ namespace Exercise_Lab06.Lab6_1
         {
             return $"Book[{id}, {title}, {author}, {year}, {price}]";
         }
-       
+        public void AddBook()
+        {
+            id = InputIntExecption("Nhập id sách: ");
+            Console.Write("Nhập tiêu đề sách: ");
+            title = Console.ReadLine();
+            while (title.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                title = Console.ReadLine();
+            }
+            Console.Write("Nhập nhà xuất bản sách: ");
+            author = Console.ReadLine();
+            while (author.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                author = Console.ReadLine();
+            }
+            year = InputIntExecption("Nhập năm xuất bản: ");
+            price = InputIntExecption("Nhập giá bán sách: ");
+        }
+        public int InputIntExecption(string message)
+        {
+            dynamic tmp;
+            Console.Write(message);
+            tmp = Console.ReadLine();
+            while (!int.TryParse(tmp, out int value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                tmp = Console.ReadLine();
+            }
+            return int.Parse(tmp);
+        }
+        
+
     }
 }

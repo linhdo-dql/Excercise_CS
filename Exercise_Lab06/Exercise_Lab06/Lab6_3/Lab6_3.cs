@@ -16,15 +16,74 @@ namespace Exercise_Lab06.Lab6_3
     /// </summary>
     class Lab6_3
     {
+        List<Car> cars = new List<Car>();
         public void ShowResult()
         {
-            List<Car> cars = InitCars();
-            Console.WriteLine("a. Khởi tạo 1 danh sách Car: ");
-            Display(cars);
-            Console.WriteLine("b. Xóa tất cả các Car có màu Red: ");
-            Display(DeleteCar(cars, "Red"));
-            Console.WriteLine("c. In danh sách các Car: ");
-            Display(cars);
+            Menu();
+        }
+        public void Menu()
+        {
+            Console.WriteLine("-----------------------------Bài 6.3-------------------------------");
+            Console.WriteLine("1. Tạo collection. ");
+            Console.WriteLine("2. Hiện thị Collections. ");
+            Console.WriteLine("3. Xóa tất cả các Car có màu Red. ");
+            Console.WriteLine("4. In danh sách các Car. ");
+            Console.WriteLine("0. Thoát.");
+            Console.WriteLine("Mời chọn: ");
+            dynamic choose = Console.ReadLine();
+            while (!int.TryParse(choose, out int value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                choose = Console.ReadLine();
+            }
+            switch (int.Parse(choose))
+            {
+                case 0: break;
+                case 1:
+                    cars = InitCars();
+                    Menu();
+                    break;
+                case 2:
+                    if (cars.Count != 0)
+                    {
+                        Console.WriteLine("Collections vừa tạo: ");
+                        Display(cars);
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa tạo Collections.");
+                    }
+                    Menu();
+                    break;
+                case 3:
+                    if (cars.Count != 0)
+                    {
+                        Console.WriteLine("Danh sách sau khi xóa Car có màu Red: ");
+                        Display(DeleteCar(cars, "Red"));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa tạo Collections.");
+                    }
+                    Menu();
+                    break;
+                case 4:
+                    if (cars.Count != 0)
+                    {
+                        Console.WriteLine("Danh sách các Car: ");
+                        Display(cars);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chưa tạo Collections.");
+                    }
+                    Menu();
+                    break;
+               
+
+                default: Menu(); break;
+            }
         }
         /// <summary>
         /// In danh sách các Car.
@@ -42,7 +101,25 @@ namespace Exercise_Lab06.Lab6_3
         /// </summary>
         /// <returns></returns>
         public List<Car> InitCars()
-        {   
+        {
+            List<Car> cars = new List<Car>();
+            Console.Write("Nhập số lượng xe: ");
+            dynamic size = Console.ReadLine();
+            while (!int.TryParse(size, out int value))
+            {
+                Console.Write("Sai. Nhập lại: ");
+                size = Console.ReadLine();
+            }
+            size = int.Parse(size);
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine("Sách {0}", i);
+                Car c = new Car();
+                c.AddCar();
+                cars.Add(c);
+            }
+            return cars;
+            /*
             List<Car> cars = new List<Car>();
             cars.Add(new Car("Ferrari", "Yellow"));
             cars.Add(new Car("McLaren", "Black"));
@@ -54,7 +131,7 @@ namespace Exercise_Lab06.Lab6_3
             cars.Add(new Car("Huyndai", "White"));
             cars.Add(new Car("Suzuki", "Red"));
             cars.Add(new Car("Mitsubishi", "Gray"));
-            return cars;
+            return cars;*/
         }
         /// <summary>
         /// Xóa các Car theo màu

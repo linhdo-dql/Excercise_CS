@@ -28,5 +28,22 @@ namespace Exercise_Lab06.Lab6_3
         {
             return $"Car[{name}, {color}]";
         }
+        public void AddCar()
+        {
+            Console.Write("Nhập tên xe: ");
+            name = Console.ReadLine();
+            while (name.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                name = Console.ReadLine();
+            }
+            Console.Write("Nhập màu xe: ");
+            color = Console.ReadLine();
+            while (color.Trim() == "")
+            {
+                Console.Write("Sai. Nhập lại: ");
+                color = Console.ReadLine();
+            }
+        }
     }
 }

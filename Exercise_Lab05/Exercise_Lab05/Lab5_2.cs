@@ -22,18 +22,6 @@ namespace Exercise_Lab05
         int[,] arr;
         public void ShowResult()
         {
-            /* Console.WriteLine("--------------3.2-------------");
-             Console.WriteLine("a. Mảng: ");
-             ShowArray(arr);
-             Console.WriteLine("b. Tổng các phần tử có chỉ số hàng bằng chỉ số cột: " + SumColumIndexEqualsRowIndex(arr));
-             Console.WriteLine("c. Phần tử nhỏ nhất trên cột: ");
-             FindMinInColumns(arr);
-             Console.Write("d. Các phần tử chia hết cho 7 là: ");
-             GetItemDivisibleOf7(arr);
-             Console.WriteLine();
-             Console.WriteLine("e. Tổng các phần tử ở đường viền mảng: " + SumOfItemInBorderArray(arr));
-             Console.WriteLine("f. Mảng 2 chiều thành mảng 1 chiều rồi sắp xếp: ");
-             ShowArray1D(Convert2DArrayTo1DArray(arr));*/
             Menu();
         }
         public void Menu()
